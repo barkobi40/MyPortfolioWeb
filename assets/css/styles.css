@@ -11,7 +11,7 @@
   --h2-font-size: 1.25rem;
   --normal-font-size: .938rem;
   --smaller-font-size: .75rem;
-  --mb-1: .5rem; /* Added for smaller margins */
+  --mb-1: .5rem;
   --mb-2: 1rem;
   --mb-3: 1.5rem;
   --mb-4: 2rem;
@@ -19,12 +19,12 @@
   --mb-6: 3rem;
   --z-back: -10;
   --z-fixed: 100;
-  --container-color: #FFFFFF;
+  --container-color: #FFFFFF; /* צבע רקע של קארדים וקונטיינרים - נשאר לבן עבור התוכן */
   --title-color: hsl(var(--hue-color), 56%, 12%);
   --text-color: hsl(var(--hue-color), 10%, 30%);
   --text-color-light: hsl(var(--hue-color), 10%, 50%);
   --input-color: hsl(var(--hue-color), 20%, 97%);
-  --body-color: hsl(var(--hue-color), 60%, 99%);
+  --body-color: hsl(var(--hue-color), 60%, 99%); /* צבע רקע כללי של הדף, מאוד בהיר (כמעט לבן) */
   --first-color-alt: #8C9EFF;
   --font-medium: 500;
   --font-semi-bold: 600;
@@ -45,6 +45,8 @@
 
 html {
   scroll-behavior: smooth;
+  height: 100%; /* וודא ש-HTML מכסה את כל הגובה */
+  overflow-x: hidden; /* מנע גלילה אופקית */
 }
 
 body {
@@ -52,8 +54,23 @@ body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   color: var(--second-color);
-  background-color: var(--body-color);
+  background-color: var(--body-color); /* הגדר צבע רקע ל-body שיראה את החלקיקים מאחוריו */
+  position: relative; /* נדרש עבור הקשר של z-index של ילדים */
+  min-height: 100vh; /* וודא שה-body מכסה לפחות את כל גובה התצוגה */
+  overflow-x: hidden; /* מנע גלילה אופקית */
 }
+
+/* Global Particles Background */
+#global-particles-background {
+    position: fixed; /* נשאר במקום בזמן שהמשתמש גולל */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* מציב אותו מאחורי כל שאר התוכן */
+    background-color: var(--body-color); /* וודא שהרקע של ה-div הזה הוא צבע גוף הדף (לבן) */
+}
+
 
 h1, h2, p {
   margin: 0;
@@ -82,6 +99,8 @@ img {
   margin-top: var(--mb-2);
   margin-bottom: var(--mb-4);
   text-align: center;
+  z-index: 1; /* וודא שהכותרות נמצאות מעל הרקע */
+  position: relative; /* נדרש עבור z-index */
 }
 
 .section-title::after {
@@ -99,6 +118,9 @@ img {
 .section {
   padding-top: 3rem;
   padding-bottom: 2rem;
+  position: relative; /* וודא שסעיפים יוצרים הקשר של ערימה */
+  background-color: var(--container-color); /* הגדר צבע רקע לסעיפים כך שהתוכן יהיה גלוי */
+  z-index: 1; /* וודא שתוכן הסעיף נמצא מעל רקע החלקיקים */
 }
 
 .bd-grid {
@@ -116,6 +138,8 @@ img {
   font-weight: var(--font-semi);
   border-radius: 0.5rem;
   transition: 0.3s;
+  z-index: 1; /* וודא שכפתורים נמצאים מעל הרקע */
+  position: relative;
 }
 
 .button:hover {
@@ -134,6 +158,8 @@ img {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: default;
+  z-index: 1;
+  position: relative;
 }
 
 .badge:hover {
@@ -149,6 +175,8 @@ img {
   flex-wrap: wrap;
   margin-bottom: 0.75rem;
   text-align: center;
+  z-index: 1;
+  position: relative;
 }
 
 .title-with-logo img.logo-inline {
@@ -175,6 +203,8 @@ img {
   font-size: 0.95rem;
   transition: 0.3s ease-in-out;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  position: relative;
 }
 
 .project-button.demo {
@@ -280,18 +310,22 @@ img {
 }
 
 .home {
-  position: relative;
+  position: relative; /* וודא שתוכן סעיף הבית נמצא מעל רקע החלקיקים */
   row-gap: 5rem;
   padding: 4rem 0 5rem;
+  /* background-color: var(--body-color); /* הגדר כאן רקע כדי להסתיר חלקיקים אם יש צורך בסעיף זה בלבד */
 }
 
 .home__data {
   align-self: center;
+  z-index: 1;
+  position: relative;
 }
 
 .home__title {
   font-size: var(--big-font-size);
   margin-bottom: var(--mb-5);
+  color: var(--title-color); /* וודא שצבע הטקסט גלוי על רקע לבן */
 }
 
 .home__title-color {
@@ -301,6 +335,8 @@ img {
 .home__social {
   display: flex;
   flex-direction: column;
+  z-index: 1;
+  position: relative;
 }
 
 .home__social-icon {
@@ -319,15 +355,17 @@ img {
   right: 0;
   bottom: 0;
   width: 260px;
+  z-index: 1; /* התמונה צריכה להיות מעל החלקיקים */
 }
 
 .home__blob {
   fill: var(--first-color);
-  width: 320px; 
+  width: 320px;
   position: absolute;
   right: 0;
   bottom: 0;
   transform: translateX(-40px);
+  z-index: 1; /* הבלוב צריך להיות מעל החלקיקים */
 }
 
 .home__blob-img {
@@ -338,6 +376,8 @@ img {
 .about__container {
   row-gap: 2rem;
   text-align: center;
+  z-index: 1;
+  position: relative;
 }
 
 .about__subtitle {
@@ -346,6 +386,8 @@ img {
 
 .about__img {
   justify-self: center;
+  z-index: 1;
+  position: relative;
 }
 
 .about__img img {
@@ -354,12 +396,10 @@ img {
 }
 
 .skills__container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  width: 100%;
-  padding: 1rem;
-  box-sizing: border-box;
+  max-width: 968px;
+  margin: 0 auto;
+  z-index: 1;
+  position: relative;
 }
 
 .skills__data-wrapper {
@@ -369,6 +409,8 @@ img {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
   width: 100%;
   max-width: 500px;
+  z-index: 1;
+  position: relative;
 }
 
 .skills__category-title {
@@ -379,6 +421,44 @@ img {
   position: relative;
   display: inline-block;
   padding-bottom: 0.3rem;
+  z-index: 1;
+}
+
+.skills__category {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-semi);
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--text-color-light);
+  color: var(--title-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  z-index: 1;
+  position: relative;
+}
+
+.skills__items div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--container-color);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  color: var(--text-color);
+  z-index: 1;
+  position: relative;
+}
+
+.skills__items img {
+  width: 20px;
+  height: 20px;
+}
+
+.skills__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-start;
 }
 
 .skills__category-title::after {
@@ -422,6 +502,8 @@ img {
   gap: 2rem;
   padding-top: 2rem;
   justify-items: center;
+  z-index: 1;
+  position: relative;
 }
 
 .work__img {
@@ -566,15 +648,6 @@ img {
   max-width: 450px;
 }
 
-.experience__description-list li {
-  position: relative;
-  margin-bottom: 0.75rem;
-  padding-left: 1.5rem;
-  font-size: var(--normal-font-size);
-  color: var(--text-color);
-  line-height: 1.6;
-}
-
 .experience__description-list li::before {
   content: '\2022';
   position: absolute;
@@ -597,6 +670,8 @@ img {
     gap: 2.5rem;
     padding-top: 1rem;
     padding-bottom: 2rem;
+    z-index: 1;
+    position: relative;
 }
 
 .leadership__item {
@@ -607,6 +682,8 @@ img {
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease;
+    z-index: 1;
+    position: relative;
 }
 
 .leadership__item:hover {
@@ -641,6 +718,8 @@ img {
 .contact__container {
   row-gap: 3rem;
   padding-bottom: 3rem;
+  z-index: 1;
+  position: relative;
 }
 
 .contact__title {
@@ -665,6 +744,7 @@ img {
   border: 1px solid transparent;
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
 .contact__card:hover {
@@ -707,6 +787,8 @@ img {
   column-gap: .5rem;
   transition: .3s;
   font-weight: var(--font-medium);
+  z-index: 1;
+  position: relative;
 }
 
 .contact__button:hover {
@@ -732,6 +814,8 @@ img {
   border: 1.5px solid var(--second-color);
   outline: none;
   margin-bottom: var(--mb-4);
+  z-index: 1;
+  position: relative;
 }
 
 .footer {
@@ -740,6 +824,8 @@ img {
   text-align: center;
   font-weight: var(--font-semi);
   padding: 2rem 0;
+  z-index: 1;
+  position: relative;
 }
 
 .footer__title {
@@ -769,7 +855,7 @@ img {
   position: absolute;
   right: 0;
   bottom: 0;
-  width: 380px; /* זה כנראה קטן מדי עבור ה-SVG בגודל 320px */
+  width: 380px;
 }
 }
 
@@ -881,10 +967,11 @@ img {
     max-width: 250px;
   }
 
-  
+
   .work__container {
     grid-template-columns: repeat(3, 1fr);
     column-gap: 2rem;
+    padding-top: 2rem;
   }
   #projects .work__container {
     justify-content: space-between;
@@ -949,6 +1036,26 @@ img {
   .skills__data-wrapper {
       padding: 2rem;
   }
+
+.skills__title {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--title-color);
+}
+.skills__grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 2rem;
+  padding: 0 1rem;
+}
+ .skills {
+  padding: 2rem 0;
+}
+.skills__container.bd-grid {
+  max-width: 968px;
+  margin: 0 auto;
+}
+
   .skills__img-container {
        max-width: 300px;
   }
@@ -961,7 +1068,7 @@ img {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
   object-fit: cover;
 }
-  
+
 }
 .projects-grid {
   display: grid;
@@ -1009,13 +1116,6 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-}
-
-.project-card-large .project__gallery img {
-  width: 100%;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 1rem;
 }
 
 .project-card-small .project__gallery img {
@@ -1075,7 +1175,7 @@ img {
 }
 
 .skills__group:hover {
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
 }
 }
 .skills__group {
@@ -1091,10 +1191,270 @@ img {
   box-sizing: border-box;
   overflow: hidden;
   min-height: 220px;
-  border: 1px solid #e6e9f0; 
+  border: 1px solid #e6e9f0;
   transition: box-shadow 0.3s ease;
 }
 
 .skills__group:hover {
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
 }
+
+#journey {
+    background-color: #fff; /* זה יהיה הרקע של סעיף המסע */
+    color: var(--text-color);
+    padding-bottom: 5rem;
+    position: relative; /* נדרש עבור z-index של ילדיו */
+    z-index: 1; /* וודא שתוכן המסע נמצא מעל החלקיקים */
+}
+
+#journey .section-title {
+    color: var(--first-color);
+}
+
+#journey .section-title::after {
+    background-color: var(--first-color);
+}
+
+.journey-timeline-container {
+    position: relative;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.journey-line {
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background-color: var(--first-color);
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.journey-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+}
+
+.journey-content-wrapper {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.journey-card {
+    background-color: #fff;
+    color: var(--text-color);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    border: 1px solid var(--first-color-alt);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    z-index: 1; /* וודא שקלפים נמצאים מעל החלקיקים */
+    position: relative;
+}
+
+.journey-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    border-color: var(--first-color);
+}
+
+.journey-card h3 {
+    font-size: var(--h2-font-size);
+    margin-bottom: var(--mb-1);
+    color: var(--second-color);
+}
+
+.journey-card .journey-date {
+    font-size: var(--normal-font-size);
+    color: var(--text-color-light);
+    margin-bottom: var(--mb-2);
+}
+
+.journey-card p {
+    font-size: var(--normal-font-size);
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.journey-card ul {
+    list-style: disc;
+    margin-left: 1.25rem;
+    padding-left: 0;
+    margin-top: var(--mb-2);
+}
+
+.journey-card ul li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+.journey-card h4 {
+    font-size: var(--normal-font-size);
+    color: var(--second-color);
+    margin-top: var(--mb-3);
+    margin-bottom: var(--mb-1);
+}
+
+/* סגנון לכותרות עם אייקונים תמונה בתוך קלפי המסע */
+.journey-card-title-with-icon {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--second-color);
+    font-size: var(--h2-font-size);
+    margin-bottom: var(--mb-1);
+}
+
+.journey-card-title-with-icon .journey-title-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    padding: 4px;
+    background-color: var(--first-color-alt);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.journey-dot {
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid #fff;
+    position: absolute;
+    left: 50%;
+    width: 18px;
+    height: 18px;
+    background-color: var(--first-color);
+    border-radius: 50%;
+    z-index: 2;
+}
+
+@media screen and (min-width: 768px) {
+    .journey-timeline-container {
+        padding: 0;
+    }
+
+    .journey-item {
+        margin-bottom: 3.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .journey-item:nth-child(odd) .journey-content-wrapper {
+        justify-content: flex-start;
+    }
+
+    .journey-item:nth-child(even) .journey-content-wrapper {
+        justify-content: flex-end;
+    }
+
+    .journey-card {
+        width: 50%;
+    }
+
+    .journey-item:first-child .journey-card {
+        width: 65%;
+        margin-right: auto;
+        margin-left: 0;
+        padding-right: 2.5rem;
+        padding-left: 1rem;
+    }
+
+    .journey-item:nth-child(even) .journey-card {
+        width: 50%;
+        padding-left: 2.5rem;
+        padding-right: 1rem;
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .journey-item:nth-child(odd):not(:first-child) .journey-card {
+        width: 50%;
+        padding-right: 2.5rem;
+        padding-left: 1rem;
+    }
+
+    .journey-dot {
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border: 3px solid #fff;
+    }
+}
+/* Journey section base */
+.journey {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: var(--container-color);
+  z-index: 1;
+  position: relative;
+}
+
+/* Container for all timeline items */
+.journey-timeline-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+}
+
+/* Each journey item */
+.journey-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Card wrapper */
+.journey-content-wrapper {
+  max-width: 800px;
+  width: 100%;
+}
+
+/* Actual card */
+.journey-card {
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: var(--text-color);
+  transition: transform 0.3s ease;
+}
+
+.journey-card:hover {
+  transform: translateY(-4px);
+}
+
+.journey-card-title-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--title-color);
+}
+
+.journey-title-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.journey-date {
+  font-size: 0.95rem;
+  color: var(--text-color-light);
+  margin-bottom: 1rem;
+}
+
+.journey-card ul {
+  padding-left: 1rem;
+  list-style-type: disc;
+}
+
+.journey-card ul li {
+  margin-bottom: 0.5rem;
+}
+
