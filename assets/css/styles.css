@@ -1410,7 +1410,7 @@ img {
 
 /* Card wrapper */
 .journey-content-wrapper {
-  max-width: 800px;
+  max-width: 1000px;
   width: 100%;
 }
 
@@ -1457,4 +1457,5 @@ img {
 .journey-card ul li {
   margin-bottom: 0.5rem;
 }
+
 

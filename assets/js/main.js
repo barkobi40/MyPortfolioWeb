@@ -5,7 +5,6 @@ window.addEventListener("scroll", () => {
   const scrollPercent = (scrollTop / docHeight) * 100;
 
   const progressBar = document.getElementById("scroll-indicator");
-  // Ensure the scroll indicator exists before trying to update its style
   if (progressBar) {
     progressBar.style.height = `${scrollPercent}%`;
   }
@@ -32,8 +31,6 @@ if (loadingElement) {
             duration: 0.2,
             delay: i * 0.15 + 0.4,
           });
-          // Note: querySelector('::after') might not work directly for pseudo-elements in GSAP
-          // For pseudo-elements, consider using a class toggle or animating parent/child elements.
         });
       },
       onComplete: () => {
@@ -48,13 +45,11 @@ if (loadingElement) {
       },
     });
   } else {
-    // If no loading letters, hide loading screen immediately to not block content
     loadingElement.style.display = "none";
   }
 }
 
-
-// Animation for Hero Text (assuming .hero-left and .hero-right exist in your HTML)
+// Animation for Hero Text
 gsap.from(".hero-left", {
   opacity: 0,
   x: -50,
@@ -70,50 +65,33 @@ gsap.from(".hero-right", {
   delay: 0.3,
 });
 
-// Animation for Journey Cards
-gsap.utils.toArray(".journey-card").forEach((card, index) => {
-  gsap.from(card, {
-    opacity: 0,
-    y: 80,
-    duration: .4,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: card,
-      start: "top 85%",
-      toggleActions: "play none none reverse",
-    },
-    delay: index * 0.1,
-  });
-});
-
 // GLOBAL PARTICLES BACKGROUND
-// This will apply to the div #global-particles-background that covers the entire page
 particlesJS("global-particles-background", {
   "particles": {
     "number": {
-      "value": 80, // Reduced number for a more subtle effect over the entire page
+      "value": 80,
       "density": { "enable": true, "value_area": 800 }
     },
-    "color": { "value": "#B8C0FF" }, // Particles will be purple
+    "color": { "value": "#B8C0FF" },
     "shape": { "type": "circle" },
     "opacity": {
       "value": 0.5,
       "random": true
     },
     "size": {
-      "value": 3, // Slightly smaller particles
+      "value": 3,
       "random": true
     },
     "line_linked": {
       "enable": true,
       "distance": 150,
-      "color": "#B8C0FF", // Lines will be purple
+      "color": "#B8C0FF",
       "opacity": 0.4,
       "width": 1
     },
     "move": {
       "enable": true,
-      "speed": 2, // Slightly slower movement
+      "speed": 2,
       "direction": "none",
       "out_mode": "out"
     }
@@ -135,9 +113,7 @@ particlesJS("global-particles-background", {
   "retina_detect": true
 });
 
-
-
-// General fade-in animation for elements with class 'fade-in'
+// Fade-in animation for elements
 gsap.utils.toArray('.fade-in').forEach((el) => {
   gsap.from(el, {
     scrollTrigger: {
@@ -192,81 +168,6 @@ gsap.from("#about-text", {
   delay: 0.2
 });
 
-// Animation for tech stack title
-gsap.from("#techstack h2", {
-  scrollTrigger: {
-    trigger: "#techstack",
-    start: "top 80%",
-    toggleActions: "play none none reset"
-  },
-  opacity: 0,
-  y: -40,
-  duration: 1.2,
-  ease: "power3.out"
-});
-
-// Animation for tech stack groups/cards
-gsap.utils.toArray("#techstack .group").forEach((card, i) => {
-  gsap.from(card, {
-    scrollTrigger: {
-      trigger: card,
-      start: "top 85%",
-      toggleActions: "play none none reset"
-    },
-    opacity: 0,
-    y: 50,
-    duration: 1,
-    ease: "power3.out",
-    delay: i * 0.1,
-  });
-});
-
-// Animation for tech categories
-gsap.utils.toArray('.tech-category').forEach((section, index) => {
-  gsap.from(section, {
-    opacity: 0,
-    y: 60,
-    duration: 0.8,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: section,
-      start: "top 80%",
-      toggleActions: "play none none reverse"
-    }
-  });
-});
-
-// Animation for reveal sections (general purpose)
-gsap.utils.toArray('.reveal-section').forEach(section => {
-  gsap.from(section, {
-    opacity: 0,
-    y: 60,
-    duration: 1,
-    scrollTrigger: {
-      trigger: section,
-      start: "top 80%",
-      toggleActions: "play none none reset"
-    }
-  });
-});
-
-// Animation for upcoming projects (if #upcoming-projects exists)
-gsap.utils.toArray(".upcoming-card").forEach((card, i) => {
-  gsap.from(card, {
-    scrollTrigger: {
-      trigger: "#upcoming-projects",
-      start: "top 85%",
-      toggleActions: "play none none reset"
-    },
-    opacity: 0,
-    y: 60,
-    duration: 1,
-    ease: "power3.out",
-    delay: i * 0.15,
-  });
-});
-
-
 /* MENU SHOW/HIDE LOGIC */
 const showMenu = (toggleId, navId) =>{
     const toggle = document.getElementById(toggleId),
@@ -301,7 +202,7 @@ const scrollActive = () =>{
               sectionId = current.getAttribute('id'),
               sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
 
-        if(sectionsClass) { // Check if sectionsClass exists before manipulating
+        if(sectionsClass) {
             if(scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight){
                 sectionsClass.classList.add('active-link')
             }else{
@@ -311,12 +212,3 @@ const scrollActive = () =>{
     })
 }
 window.addEventListener('scroll', scrollActive)
-
-// Optional: Add a DOMContentLoaded listener to ensure all HTML is parsed before running scripts
-document.addEventListener('DOMContentLoaded', () => {
-    // Call functions that need DOM elements ready
-    // For example, if your loading animation or hero text animations
-    // depend on these elements being fully loaded.
-    // The current GSAP setup often handles this with ScrollTrigger,
-    // but explicit calls here can help.
-});
