@@ -219,10 +219,18 @@ img {
 }
 
 .project-button.code {
-  background: white;
-  color: var(--second-color);
+  background: #fff;
+  color: var(--second-color); /* צבע כהה */
+  border: 2px solid var(--first-color);
+  text-align: center;
+}
+
+.dark-mode .project-button.code {
+  background: #2a2a2a;
+  color: #fff;
   border: 2px solid var(--first-color);
 }
+
 
 .project-button.code:hover {
   background: var(--first-color);
@@ -230,6 +238,7 @@ img {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
+
 
 .l-header {
   width: 100%;
@@ -310,10 +319,9 @@ img {
 }
 
 .home {
-  position: relative; /* וודא שתוכן סעיף הבית נמצא מעל רקע החלקיקים */
+  position: relative; 
   row-gap: 5rem;
   padding: 4rem 0 5rem;
-  /* background-color: var(--body-color); /* הגדר כאן רקע כדי להסתיר חלקיקים אם יש צורך בסעיף זה בלבד */
 }
 
 .home__data {
@@ -325,7 +333,7 @@ img {
 .home__title {
   font-size: var(--big-font-size);
   margin-bottom: var(--mb-5);
-  color: var(--title-color); /* וודא שצבע הטקסט גלוי על רקע לבן */
+  color: var(--title-color); 
 }
 
 .home__title-color {
@@ -355,7 +363,7 @@ img {
   right: 0;
   bottom: 0;
   width: 260px;
-  z-index: 1; /* התמונה צריכה להיות מעל החלקיקים */
+  z-index: 1; 
 }
 
 .home__blob {
@@ -365,7 +373,7 @@ img {
   right: 0;
   bottom: 0;
   transform: translateX(-40px);
-  z-index: 1; /* הבלוב צריך להיות מעל החלקיקים */
+  z-index: 1; 
 }
 
 .home__blob-img {
@@ -563,12 +571,6 @@ img {
   margin-bottom: 1rem;
 }
 
-.project__gallery img {
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
 
 .project__gallery img:hover {
   transform: scale(1.05);
@@ -735,7 +737,7 @@ img {
 }
 
 .contact__card {
-  background-color: var(--container-color);
+  background-color: var(--container-color); 
   padding: 1.5rem 1.75rem;
   border-radius: 1rem;
   text-align: center;
@@ -746,6 +748,14 @@ img {
   overflow: hidden;
   z-index: 1;
 }
+
+
+.dark-mode .contact__card {
+  background-color: var(--container-color); 
+  border: 1px solid var(--first-color-alt);
+}
+
+
 
 .contact__card:hover {
   transform: translateY(-8px) scale(1.02);
@@ -1200,11 +1210,11 @@ img {
 }
 
 #journey {
-    background-color: #fff; /* זה יהיה הרקע של סעיף המסע */
+    background-color: #fff; 
     color: var(--text-color);
     padding-bottom: 5rem;
-    position: relative; /* נדרש עבור z-index של ילדיו */
-    z-index: 1; /* וודא שתוכן המסע נמצא מעל החלקיקים */
+    position: relative; 
+    z-index: 1; 
 }
 
 #journey .section-title {
@@ -1251,7 +1261,7 @@ img {
     width: 100%;
     border: 1px solid var(--first-color-alt);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    z-index: 1; /* וודא שקלפים נמצאים מעל החלקיקים */
+    z-index: 1; 
     position: relative;
 }
 
@@ -1299,7 +1309,6 @@ img {
     margin-bottom: var(--mb-1);
 }
 
-/* סגנון לכותרות עם אייקונים תמונה בתוך קלפי המסע */
 .journey-card-title-with-icon {
     display: flex;
     align-items: center;
@@ -1384,7 +1393,6 @@ img {
         border: 3px solid #fff;
     }
 }
-/* Journey section base */
 .journey {
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -1393,7 +1401,6 @@ img {
   position: relative;
 }
 
-/* Container for all timeline items */
 .journey-timeline-container {
   display: flex;
   flex-direction: column;
@@ -1401,20 +1408,17 @@ img {
   position: relative;
 }
 
-/* Each journey item */
 .journey-item {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Card wrapper */
 .journey-content-wrapper {
   max-width: 1000px;
   width: 100%;
 }
 
-/* Actual card */
 .journey-card {
   background-color: #fff;
   border-radius: 1rem;
@@ -1458,4 +1462,116 @@ img {
   margin-bottom: 0.5rem;
 }
 
+@media screen and (max-width: 576px) {
+  .home__blob-wrapper {
+    display: none !important;
+  }
+}
 
+@media screen and (max-width: 576px) {
+  .home {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    row-gap: 2rem;
+  }
+}
+
+.dark-mode {
+  --body-color: #121212;
+  --container-color: #1e1e1e;
+  --title-color: #ffffff;
+  --text-color: #cccccc;
+  --text-color-light: #888888;
+  --first-color: #8C9EFF;
+  --first-color-alt: #6574cd;
+  --second-color: #ffffff;
+  background-color: var(--body-color);
+}
+
+body,
+.section,
+.button,
+.contact__card,
+.experience__card,
+.leadership__item {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+#darkModeToggle {
+  background-color: var(--first-color);
+  color: white;
+  border: none;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+}
+
+
+.dark-mode .l-header {
+  background-color: #1e1e1e;
+}
+
+.dark-mode .nav__link {
+  color: var(--text-color);
+}
+
+.dark-mode #journey {
+  background-color: var(--container-color);
+}
+
+.dark-mode .journey-card {
+  background-color: #2a2a2a;
+  color: var(--text-color);
+  border-color: var(--first-color-alt);
+}
+
+.dark-mode .journey-card-title-with-icon,
+.dark-mode .journey-card ul li {
+  color: var(--text-color);
+}
+
+.dark-mode .skills__items div {
+  background-color: #2a2a2a;
+  color: #fff;
+  border: 1px solid var(--first-color);
+}
+
+.dark-mode .leadership__item {
+  background-color: #2a2a2a;
+  color: var(--text-color);
+  border: 1px solid var(--first-color-alt);
+}
+
+.project-card-wide,
+.project-card-tall {
+  background-color: var(--container-color);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 500px;
+  transition: transform 0.3s ease;
+}
+
+.project-card-wide:hover,
+.project-card-tall:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.dark-mode .project-card-wide,
+.dark-mode .project-card-tall {
+  background-color: #2a2a2a;
+  color: var(--text-color);
+  border: 1px solid var(--first-color-alt);
+}
+
+.project-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
