@@ -7,13 +7,11 @@
 
         <link rel="stylesheet" href="assets/css/styles.css">
 
-        <!-- =====BOX ICONS===== -->
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
         <title>Portfolio website complete</title>
     </head>
     <body>
-        <!-- Global Particle Background - This will be the full-page background -->
         <div id="global-particles-background"></div>
 
         <!--===== HEADER =====-->
@@ -22,6 +20,7 @@
                 <div>
                     <a href="#" class="nav__logo">Bar</a>
                     <button id="darkModeToggle" class="button" style="position:absolute; top:1rem; right:1rem; z-index:200;">
+                        <span id="modeIcon" aria-label="Toggle dark mode">🌙</span>
                     </button>
 
                 </div>
@@ -33,7 +32,7 @@
                         <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
                         <li class="nav__item"><a href="#journey" class="nav__link">My Journey</a></li>
                         <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
-                        <li class="nav__item"><a href="#leadership" class="nav__link">Leadership</a></li>
+                        <li class="nav__item"><a href="#leadership" class="nav__link">Involvement</a></li>
                         <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
                     </ul>
                 </div>
@@ -47,7 +46,6 @@
         <main class="l-main">
      <!--===== HOME =====-->
 <section class="home bd-grid" id="home">
-    <!-- Content will appear over the global particle background -->
     <div class="home__data">
         <h1 class="home__title">
             Hi,<br>
@@ -62,7 +60,6 @@
         <a href="https://github.com/barkobi40" class="home__social-icon" target="_blank"><i class='bx bxl-github'></i></a>
     </div>
 
-    <!-- ✅ עטפנו את כל הבלוב והתמונה -->
     <div class="home__blob-wrapper">
       <div class="home__img">
         <svg class="home__blob" viewBox="0 0 479 467" xmlns="http://www.w3.org/2000/svg">
@@ -175,11 +172,11 @@
                     </h3>
                     <p class="journey-date">DealHub | 2023 - Present</p>
                     <ul>
-                        <li>QA within the R&D team – working closely with developers and product managers </li>
-                        <li>JS-based automated test suites & CI/CD with Jenkins </li>
-                        <li>Jira for agile stories & epics; GitBucket version control </li>
-                        <li>Take initiative on product- and dev-related tasks beyond QA responsibilities</li>
-                        <li>Cross-team collaboration for smooth product releases </li>
+                      <li>QA within the R&D team – collaborating closely with developers and product managers</li>
+                      <li>JavaScript-based test automation integrated into CI/CD pipelines via Jenkins</li>
+                      <li>Agile workflow using Jira for stories & epics, GitBucket for version control</li>
+                      <li>Proactive involvement in dev-side tasks beyond core QA responsibilities</li>
+                      <li>Cross-functional teamwork to ensure high-quality and timely product releases</li>                      
                     </ul>
                 </div>
             </div>
@@ -194,7 +191,8 @@
                         B.Sc. Computer Science
                     </h3>
                     <p class="journey-date">The College of Management Academic Studies (COLMAN) | 2022 - Present</p>
-                    <p>Currently pursuing a Bachelor of Science in Computer Science. Gained skills in product development, market analysis, and agile methodologies through a Product Management course.</p>
+                    <p>Bachelor of Science in Computer Science, with coursework in product development, market analysis, and agile methodologies through a Product Management course.
+                    </p>
                 </div>
             </div>
             <div class="journey-dot hidden md:block"></div>
@@ -235,7 +233,6 @@
 </section>
 <!--===== PROJECTS =====-->
 <section class="projects section" id="projects">
-    <!-- Content will appear over the global particle background -->
     <h2 class="section-title">Projects</h2>
 
     <div class="projects-grid">
@@ -336,9 +333,9 @@
 </div>
 </section>
 
-<!--===== LEADERSHIP =====-->
+<!--===== Involvement =====-->
 <section class="leadership section" id="leadership">
-  <h2 class="section-title">Leadership & Community</h2>
+  <h2 class="section-title">Involvement</h2>
   <div class="work__container bd-grid" style="justify-content: center;">
 
     <div class="leadership__item" style="max-width: 600px; margin: 0 auto;">
@@ -416,37 +413,13 @@
             <p class="footer__copy">&#169; 2025 Bar Kobi. All rights reserved.</p>
         </footer>
 
-        <!-- Add GSAP libraries (core and ScrollTrigger plugin) -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
-        <!-- Add Particles.js library -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
-
-        <!-- Your custom JavaScript file (main.js) -->
         <script src="assets/js/main.js"></script>
-        <script>
-  const toggleButton = document.getElementById("darkModeToggle");
-  const body = document.body;
-
-  // On load: check saved preference
-document.addEventListener("DOMContentLoaded", () => {
-  const savedMode = localStorage.getItem("dark-mode");
-  if (savedMode === "true") {
-    document.body.classList.add("dark-mode");
-    toggleButton.textContent = "☀️";
-  } else {
-    toggleButton.textContent = "🌙";
-  }
-});
-
-// On click: toggle mode + save preference
-toggleButton.addEventListener("click", () => {
-  const isDark = document.body.classList.toggle("dark-mode");
-  toggleButton.textContent = isDark ? "☀️" : "🌙";
-  localStorage.setItem("dark-mode", isDark);
-});
-
-</script>
+        <!-- Dark mode toggle logic -->
+        <script src="assets/js/darkmode.js"></script>
+        <!-- End scripts -->
 
     </body>
 </html>

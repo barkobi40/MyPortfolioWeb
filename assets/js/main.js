@@ -1,4 +1,3 @@
-// Scroll Progress Bar Logic
 window.addEventListener("scroll", () => {
   const scrollTop = window.scrollY;
   const docHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -10,7 +9,6 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// Loading animation (requires an HTML structure for #loading and .loading-text span elements)
 const loadingElement = document.getElementById("loading");
 if (loadingElement) {
   const letters = document.querySelectorAll(".loading-text span");
@@ -49,7 +47,6 @@ if (loadingElement) {
   }
 }
 
-// Animation for Hero Text
 gsap.from(".hero-left", {
   opacity: 0,
   x: -50,
@@ -65,7 +62,6 @@ gsap.from(".hero-right", {
   delay: 0.3,
 });
 
-// GLOBAL PARTICLES BACKGROUND
 particlesJS("global-particles-background", {
   "particles": {
     "number": {
@@ -113,7 +109,6 @@ particlesJS("global-particles-background", {
   "retina_detect": true
 });
 
-// Fade-in animation for elements
 gsap.utils.toArray('.fade-in').forEach((el) => {
   gsap.from(el, {
     scrollTrigger: {
@@ -128,7 +123,6 @@ gsap.utils.toArray('.fade-in').forEach((el) => {
   });
 });
 
-// Animation for project cards
 gsap.from(".project-card", {
   scrollTrigger: {
     trigger: ".project-card",
@@ -141,7 +135,6 @@ gsap.from(".project-card", {
   ease: "power3.out"
 });
 
-// Animation for about image
 gsap.from("#about-img", {
   scrollTrigger: {
     trigger: "#about-img",
@@ -154,7 +147,6 @@ gsap.from("#about-img", {
   ease: "power3.out"
 });
 
-// Animation for about text
 gsap.from("#about-text", {
   scrollTrigger: {
     trigger: "#about-text",
@@ -168,7 +160,6 @@ gsap.from("#about-text", {
   delay: 0.2
 });
 
-/* MENU SHOW/HIDE LOGIC */
 const showMenu = (toggleId, navId) =>{
     const toggle = document.getElementById(toggleId),
     nav = document.getElementById(navId)
@@ -181,27 +172,21 @@ const showMenu = (toggleId, navId) =>{
 }
 showMenu('nav-toggle','nav-menu')
 
-/* REMOVE MENU MOBILE */
 const navLink = document.querySelectorAll('.nav__link')
-
 function linkAction(){
     const navMenu = document.getElementById('nav-menu')
     navMenu.classList.remove('show')
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
-/* SCROLL SECTIONS ACTIVE LINK */
 const sections = document.querySelectorAll('section[id]')
-
 const scrollActive = () =>{
     const scrollDown = window.scrollY
-
     sections.forEach(current =>{
         const sectionHeight = current.offsetHeight,
               sectionTop = current.offsetTop - 58,
               sectionId = current.getAttribute('id'),
               sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
-
         if(sectionsClass) {
             if(scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight){
                 sectionsClass.classList.add('active-link')
