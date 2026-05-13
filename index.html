@@ -1,424 +1,512 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-      <link rel="icon" href="assets/img/b_favicon.png" type="image/png">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="assets/css/styles.css">
+<head>
+  <link rel="icon" href="assets/img/b_favicon.png" type="image/png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="assets/css/styles.css">
 
-        <title>Portfolio website complete</title>
-    </head>
-    <body>
-        <div id="global-particles-background"></div>
+  <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
-        <!--===== HEADER =====-->
-        <header class="l-header">
-            <nav class="nav bd-grid">
-                <div>
-                    <a href="#" class="nav__logo">Bar</a>
-                    <button id="darkModeToggle" class="button" style="position:absolute; top:1rem; right:1rem; z-index:200;">
-                        <span id="modeIcon" aria-label="Toggle dark mode">🌙</span>
-                    </button>
+  <title>Portfolio website complete</title>
+</head>
 
-                </div>
+<body>
+  <div id="global-particles-background"></div>
 
-                <div class="nav__menu" id="nav-menu">
-                    <ul class="nav__list">
-                        <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
-                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-                        <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
-                        <li class="nav__item"><a href="#journey" class="nav__link">My Journey</a></li>
-                        <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
-                        <li class="nav__item"><a href="#leadership" class="nav__link">Involvement</a></li>
-                        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
-                    </ul>
-                </div>
+  <!--===== HEADER =====-->
+  <header class="l-header">
+    <nav class="nav bd-grid">
+      <div>
+        <a href="#" class="nav__logo">Bar</a>
+        <button id="darkModeToggle" class="button" style="position:absolute; top:1rem; right:1rem; z-index:200;">
+          <span id="modeIcon" aria-label="Toggle dark mode">🌙</span>
+        </button>
 
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class='bx bx-menu'></i>
-                </div>
-            </nav>
-        </header>
+      </div>
 
-        <main class="l-main">
-     <!--===== HOME =====-->
-<section class="home bd-grid" id="home">
-    <div class="home__data">
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
+          <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+          <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+          <li class="nav__item"><a href="#journey" class="nav__link">My Journey</a></li>
+          <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
+          <li class="nav__item"><a href="#leadership" class="nav__link">Involvement</a></li>
+          <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="nav__toggle" id="nav-toggle">
+        <i class='bx bx-menu'></i>
+      </div>
+    </nav>
+  </header>
+
+  <main class="l-main">
+    <!--===== HOME =====-->
+    <section class="home bd-grid" id="home">
+      <div class="home__data">
         <h1 class="home__title">
-            Hi,<br>
-            I'm <span class="home__title-color">Bar Kobi</span><br>
-            <span class="home__subtitle">Developer, <br> Automation Engineer <br>& Product Thinker</span>
+          Hi,<br>
+          I'm <span class="home__title-color">Bar Kobi</span><br>
+          <span class="home__subtitle">Developer, <br> Automation Engineer <br>& Product Thinker</span>
         </h1>
         <a href="#contact" class="button">Contact Me</a>
-    </div>
-
-    <div class="home__social">
-        <a href="https://www.linkedin.com/in/bar-kobi/" class="home__social-icon" target="_blank"><i class='bx bxl-linkedin'></i></a>
-        <a href="https://github.com/barkobi40" class="home__social-icon" target="_blank"><i class='bx bxl-github'></i></a>
-    </div>
-
-    <div class="home__blob-wrapper">
-      <div class="home__img">
-        <svg class="home__blob" viewBox="0 0 479 467" xmlns="http://www.w3.org/2000/svg">
-          <mask id="mask0" mask-type="alpha">
-            <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
-          </mask>
-          <g mask="url(#mask0)">
-            <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
-            <image class="home__blob-img" x="50" y="60" href="assets/img/perfil.png"/>
-          </g>
-        </svg>
-      </div>
-    </div>
-</section>
-
-            <!--===== ABOUT =====-->
-            <section class="about section" id="about">
-                <h2 class="section-title">About Me</h2>
-
-                <div class="about__container bd-grid">
-                    <div class="about__img">
-                        <img src="assets/img/about.jpg" alt="Bar Kobi">
-                    </div>
-                    
-                    <div>
-                        <h2 class="about__subtitle">I'm Bar Kobi</h2>
-                        <p class="about__text">
-                          I'm a QA Automation Engineer with a strong passion for product, development, and creative thinking.<br>
-                          I'm highly motivated and love finding ways to bring value through code, collaboration, or fresh product ideas.<br>
-                          I'm a people person who thrives in collaboration and truly enjoys working with others to solve real user problems and build meaningful solutions.<br>
-                          I enjoy taking initiative, especially where creativity, tech, and product meet.
-                                                  </p>
-                    </div>                                   
-                </div>
-            </section>
-
-            <!--===== SKILLS =====-->
-<section class="skills section" id="skills">
-  <h2 class="section-title">My Skills</h2>
-  <div class="skills__container bd-grid">
-    <div class="skills__grid">
-      <div class="skills__category">FRONTEND</div>
-      <div class="skills__items">
-        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="20" /> JavaScript</div>
-        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="20" /> HTML</div>
-        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="20" /> React</div>
-        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" width="20" /> Angular</div>
-        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="20" /> TypeScript</div>
       </div>
 
-      <div class="skills__category">BACKEND</div>
-      <div class="skills__items">
-        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="20" /> Java</div>
-        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="20" /> Python</div>
-        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="20" /> Node.js</div>
-        <div><img src="https://avatars.githubusercontent.com/u/80191249?s=200&v=4" width="20" /> Ktor</div>
-        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" width="20" /> Spring Boot</div>
-        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" width="20" /> C++</div>
-        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" width="20" /> C</div>
+      <div class="home__social">
+        <a href="https://www.linkedin.com/in/bar-kobi/" class="home__social-icon" target="_blank"><i
+            class='bx bxl-linkedin'></i></a>
+        <a href="https://github.com/barkobi40" class="home__social-icon" target="_blank"><i
+            class='bx bxl-github'></i></a>
       </div>
 
-      <div class="skills__category">DATABASE</div>
-      <div class="skills__items">
-        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="20" /> MongoDB</div>
-        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongoose/mongoose-original.svg" width="20" /> Mongoose</div>
-        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="20" /> MYSQL</div>
-        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" width="20" /> Firebase</div>
-        <div><img src="https://cdn-icons-png.flaticon.com/512/2823/2823092.png" width="20" /> ROOM</div>
+      <div class="home__blob-wrapper">
+        <div class="home__img">
+          <svg class="home__blob" viewBox="0 0 479 467" xmlns="http://www.w3.org/2000/svg">
+            <mask id="mask0" mask-type="alpha">
+              <path
+                d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z" />
+            </mask>
+            <g mask="url(#mask0)">
+              <path
+                d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z" />
+              <image class="home__blob-img" x="50" y="60" href="assets/img/perfil.png" />
+            </g>
+          </svg>
+        </div>
       </div>
+    </section>
 
-      <div class="skills__category">TOOLS & PLATFORMS</div>
-      <div class="skills__items">
-        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="20" /> Git</div>
-        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="20" /> GitHub</div>
-        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" width="20" /> Docker</div>
-        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" width="20" /> AWS</div>
-        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original-wordmark.svg" width="20" /> Microsoft Azure</div>
-        <div><img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" width="20" /> Jenkins</div>
-        <div><img src="https://cdn-icons-png.flaticon.com/512/5968/5968825.png" width="20" /> Jira</div>
-        <div><img src="https://cdn-icons-png.flaticon.com/512/6124/6124992.png" width="20" /> Linux</div>
-        <div><img src="https://cdn-icons-png.flaticon.com/512/5968/5968520.png" width="20" /> Postman</div>
-        <div><img src="https://cdn-icons-png.flaticon.com/512/5968/5968701.png" width="20" /> Figma</div>
+    <!--===== ABOUT =====-->
+    <section class="about section" id="about">
+      <h2 class="section-title">About Me</h2>
+
+      <div class="about__container bd-grid">
+        <div class="about__img">
+          <img src="assets/img/about.jpg" alt="Bar Kobi">
+        </div>
+
+        <div>
+          <h2 class="about__subtitle">I'm Bar Kobi</h2>
+          <p class="about__text">
+            I'm a QA Automation Engineer with a strong passion for product, development, and creative thinking.<br>
+            I'm highly motivated and love finding ways to bring value through code, collaboration, or fresh product
+            ideas.<br>
+            I'm a people person who thrives in collaboration and truly enjoys working with others to solve real user
+            problems and build meaningful solutions.<br>
+            I enjoy taking initiative, especially where creativity, tech, and product meet.
+          </p>
+        </div>
       </div>
+    </section>
 
-      <div class="skills__category">METHODOLOGIES & CONCEPTS</div>
-      <div class="skills__items">
-        <div><img src="https://cdn-icons-png.flaticon.com/512/751/751508.png" width="20" /> REST APIs</div>
-        <div><img src="https://cdn-icons-png.flaticon.com/512/3013/3013200.png" width="20" /> Automation Testing</div>
-        <div><img src="https://cdn-icons-png.flaticon.com/512/2908/2908479.png" width="20" /> Log Analysis</div>
-        <div><img src="https://cdn-icons-png.flaticon.com/512/2513/2513264.png" width="20" /> Cross-platform Testing</div>
-        <div><img src="https://cdn-icons-png.flaticon.com/512/5810/5810459.png" width="20" /> Algorithms</div>
+    <!--===== SKILLS =====-->
+    <section class="skills section" id="skills">
+      <h2 class="section-title">My Skills</h2>
+      <div class="skills__container bd-grid">
+        <div class="skills__grid">
+          <div class="skills__category">FRONTEND</div>
+          <div class="skills__items">
+            <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                width="20" /> JavaScript</div>
+            <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="20" />
+              HTML</div>
+            <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="20" />
+              React</div>
+            <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"
+                width="20" /> Angular</div>
+            <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                width="20" /> TypeScript</div>
+          </div>
+
+          <div class="skills__category">BACKEND</div>
+          <div class="skills__items">
+            <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="20" /> Java
+            </div>
+            <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="20" />
+              Python</div>
+            <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="20" />
+              Node.js</div>
+            <div><img src="https://avatars.githubusercontent.com/u/80191249?s=200&v=4" width="20" /> Ktor</div>
+            <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" width="20" />
+              Spring Boot</div>
+            <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
+                width="20" /> C++</div>
+            <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" width="20" /> C</div>
+          </div>
+
+          <div class="skills__category">DATABASE</div>
+          <div class="skills__items">
+            <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                width="20" /> MongoDB</div>
+            <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongoose/mongoose-original.svg"
+                width="20" /> Mongoose</div>
+            <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="20" />
+              MYSQL</div>
+            <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" width="20" />
+              Firebase</div>
+            <div><img src="https://cdn-icons-png.flaticon.com/512/2823/2823092.png" width="20" /> ROOM</div>
+          </div>
+
+          <div class="skills__category">TOOLS & PLATFORMS</div>
+          <div class="skills__items">
+            <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="20" /> Git
+            </div>
+            <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="20" />
+              GitHub</div>
+            <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" width="20" />
+              Docker</div>
+            <div><img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+                width="20" /> AWS</div>
+            <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original-wordmark.svg"
+                width="20" /> Microsoft Azure</div>
+            <div><img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" width="20" /> Jenkins</div>
+            <div><img src="https://cdn-icons-png.flaticon.com/512/5968/5968825.png" width="20" /> Jira</div>
+            <div><img src="https://cdn-icons-png.flaticon.com/512/6124/6124992.png" width="20" /> Linux</div>
+            <div><img src="https://cdn-icons-png.flaticon.com/512/5968/5968520.png" width="20" /> Postman</div>
+            <div><img src="https://cdn-icons-png.flaticon.com/512/5968/5968701.png" width="20" /> Figma</div>
+          </div>
+
+          <div class="skills__category">METHODOLOGIES & CONCEPTS</div>
+          <div class="skills__items">
+            <div><img src="https://cdn-icons-png.flaticon.com/512/751/751508.png" width="20" /> REST APIs</div>
+            <div><img src="https://cdn-icons-png.flaticon.com/512/3013/3013200.png" width="20" /> Automation Testing
+            </div>
+            <div><img src="https://cdn-icons-png.flaticon.com/512/2908/2908479.png" width="20" /> Log Analysis</div>
+            <div><img src="https://cdn-icons-png.flaticon.com/512/2513/2513264.png" width="20" /> Cross-platform Testing
+            </div>
+            <div><img src="https://cdn-icons-png.flaticon.com/512/5810/5810459.png" width="20" /> Algorithms</div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!--===== WORK =====-->
-<section class="journey section" id="journey">
-    <h2 class="section-title">My Journey</h2>
+    <!--===== WORK =====-->
+    <section class="journey section" id="journey">
+      <h2 class="section-title">My Journey</h2>
 
-    <div class="journey-timeline-container bd-grid">
+      <div class="journey-timeline-container bd-grid">
         <div class="journey-line hidden md:block"></div>
 
         <div class="journey-item">
-            <div class="journey-content-wrapper">
-                <div class="journey-card">
-                    <h3 class="journey-card-title-with-icon">
-                        <img src="assets/img/ic_dealhub.webp" alt="DealHub Icon" class="journey-title-icon">
-                        QA Automation Engineer
-                    </h3>
-                    <p class="journey-date">DealHub | 2023 - Present</p>
-                    <ul>
-                      <li>QA within the R&D team – collaborating closely with developers and product managers</li>
-                      <li>JavaScript-based test automation integrated into CI/CD pipelines via Jenkins</li>
-                      <li>Agile workflow using Jira for stories & epics, GitBucket for version control</li>
-                      <li>Proactive involvement in dev-side tasks beyond core QA responsibilities</li>
-                      <li>Cross-functional teamwork to ensure high-quality and timely product releases</li>                      
-                    </ul>
-                </div>
+          <div class="journey-content-wrapper">
+            <div class="journey-card">
+              <h3 class="journey-card-title-with-icon">
+                <img src="assets/img/ic_palo.png" alt="Palo Alto Networks Icon" class="journey-title-icon">
+                QA Automation Architect
+              </h3>
+              <p class="journey-date">Palo Alto Networks | 2023 - Present</p>
+              <ul>
+                <li>Leading the design and implementation of a new test automation framework for the Cortex XDR product
+                  line</li>
+                <li>Developing and maintaining automated tests using Python and Pytest</li>
+                <li>Integrating automated tests into the CI/CD pipeline using Jenkins</li>
+                <li>Collaborating with developers and product managers to ensure high-quality and timely product
+                  releases</li>
+              </ul>
             </div>
-            <div class="journey-dot hidden md:block"></div>
+          </div>
+          <div class="journey-dot hidden md:block"></div>
         </div>
 
         <div class="journey-item">
-            <div class="journey-content-wrapper">
-                <div class="journey-card">
-                    <h3 class="journey-card-title-with-icon">
-                        <img src="assets/img/ic_colman.png" alt="COLMAN Icon" class="journey-title-icon">
-                        B.Sc. Computer Science
-                    </h3>
-                    <p class="journey-date">The College of Management Academic Studies (COLMAN) | 2022 - Present</p>
-                    <p>Bachelor of Science in Computer Science, with a specialization in Full-Stack Development.
-                    </p>
-                </div>
+          <div class="journey-content-wrapper">
+            <div class="journey-card">
+              <h3 class="journey-card-title-with-icon">
+                <img src="assets/img/ic_dealhub.webp" alt="DealHub Icon" class="journey-title-icon">
+                QA Automation Engineer
+              </h3>
+              <p class="journey-date">DealHub | 2023 - Present</p>
+              <ul>
+                <li>QA within the R&D team – collaborating closely with developers and product managers</li>
+                <li>JavaScript-based test automation integrated into CI/CD pipelines via Jenkins</li>
+                <li>Agile workflow using Jira for stories & epics, GitBucket for version control</li>
+                <li>Proactive involvement in dev-side tasks beyond core QA responsibilities</li>
+                <li>Cross-functional teamwork to ensure high-quality and timely product releases</li>
+              </ul>
             </div>
-            <div class="journey-dot hidden md:block"></div>
+          </div>
+          <div class="journey-dot hidden md:block"></div>
         </div>
 
-         <div class="journey-item">
-            <div class="journey-content-wrapper">
-                <div class="journey-card">
-                    <h3 class="journey-card-title-with-icon">
-                        <img src="assets/img/ic_idf.png" alt="IDF Icon" class="journey-title-icon">
-                        Medic & Medic Instructor
-                    </h3>
-                    <p class="journey-date">Military Service | 2017-2019</p>
-                    <ul>
-                        <li>I served as a certified medical practitioner and subsequently as a medic instructor in the IDF.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="journey-dot hidden md:block"></div>
-        </div>
-        
         <div class="journey-item">
-            <div class="journey-content-wrapper">
-                <div class="journey-card">
-                    <h3 class="journey-card-title-with-icon">
-                        <img src="assets/img/ic_high_school.webp" alt="High School Icon" class="journey-title-icon">
-                        High School Diploma
-                    </h3>
-                    <p class="journey-date">Gymnasia Rehavia High School- Jerusalem | 2012-2017</p>
-                    <p>Graduated with High Honors. During middle school, participated in the Mofet program — an academic excellence track focused on strengthening scientific subjects, mathematics, and English. </p>
-                </div>
+          <div class="journey-content-wrapper">
+            <div class="journey-card">
+              <h3 class="journey-card-title-with-icon">
+                <img src="assets/img/ic_colman.png" alt="COLMAN Icon" class="journey-title-icon">
+                B.Sc. Computer Science
+              </h3>
+              <p class="journey-date">The College of Management Academic Studies (COLMAN) | 2022 - Present</p>
+              <p>Bachelor of Science in Computer Science, with a specialization in Full-Stack Development.
+              </p>
             </div>
-            <div class="journey-dot hidden md:block"></div>
+          </div>
+          <div class="journey-dot hidden md:block"></div>
         </div>
 
-    </div>
-</section>
-<!--===== PROJECTS =====-->
-<section class="projects section" id="projects">
-    <h2 class="section-title">Projects</h2>
-
-    <div class="projects-grid">
-
-<!-- RooMatch App -->
-<div class="project-card-wide" >
-  <div class="featured-badge">Featured</div>
-  <div class="project__gallery roomatch" style="height: 220px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-    <img src="assets/img/project-roomatch.png" alt="RooMatch Screenshot 1" style="height: 100%; width: 100%; object-fit: cover;">
-  </div>
-  <h3 style="text-align: center;">RooMatch App</h3>
-  <p style="text-align: center;">
-    RooMatch helps users find the perfect apartment and roommate by matching personal preferences with real listings and profiles. <br>
-    The app uses a smart algorithm that learns from user behavior to improve match quality over time. <br>
-    Built as a final-year project by a team of five, it offers a smooth, personalized experience for both renters and property owners.
-  </p>
-  <br>
-  <div class="skills__items" style="justify-content: center; margin-top: 10px;">
-    <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" width="20" /> Kotlin</div>
-    <div><img src="https://avatars.githubusercontent.com/u/80191249?s=200&v=4" width="20" /> Ktor</div>
-    <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="20" /> MongoDB</div>
-    <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" width="20" /> Jetpack Compose</div>
-    <div><img src="https://cdn-icons-png.flaticon.com/512/9184/9184643.png" width="20" /> JWT</div>
-    <div><img src="https://cdn-icons-png.flaticon.com/512/5810/5810459.png" width="20" /> Flow</div>
-    <div><img src="https://cdn-icons-png.flaticon.com/512/2823/2823092.png" width="20" /> ROOM</div>
-  </div>
-  <br>
-  <br>
-  <div style="display: flex; justify-content: center; gap: 16px; margin-top: 20px;">
-    <a href="https://www.youtube.com/watch?v=kSwQQ943zFM" target="_blank" class="project-button demo">View Demo</a>
-    <a href="https://github.com/barkobi40/RooMatchApp" target="_blank" class="project-button code">View Code</a>
-  </div>
-</div>
-<!-- Chargehood App -->
-<div class="project-card-tall" >
-  <div class="project__gallery chargehood" style="height: auto; display: flex; align-items: center; justify-content: center;">
-    <img src="assets/img/charghood.png" alt="Chargehood Screenshot 1" style="width: 90%; height: auto; object-fit: contain; border-radius: 1rem;">
-  </div>
-  <h3 style="text-align: center;">Chargehood App</h3>
-  <p style="text-align: center;">
-    Chargehood is an innovative app that makes finding and managing private charging stations simple and fast.
-  </p>
-  <div class="skills__items" style="justify-content: center; margin-top: 10px;">
-    <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" width="20" /> Kotlin</div>
-    <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" width="20" /> Firebase</div>
-    <div><img src="https://cdn-icons-png.flaticon.com/512/120/120614.png" width="20" /> XML-layouts</div>
-    <div><img src="https://cdn-icons-png.flaticon.com/512/924/924915.png" width="20" /> MVVM</div>
-    <div><img src="https://cdn-icons-png.flaticon.com/512/2823/2823092.png" width="20" /> ROOM</div>
-    <div><img src="https://cdn-icons-png.flaticon.com/512/2150/2150036.png" width="20" /> LiveData</div>
-  </div>
-  <br>
-  <div style="display: flex; justify-content: center; gap: 16px; margin-top: 20px;">
-    <a href="https://www.youtube.com/watch?v=3nHAvhUWASM" target="_blank" class="project-button demo">View Demo</a>
-    <a href="https://github.com/barkobi40/ChargehoodApp" target="_blank" class="project-button code">View Code</a>
-  </div>
-</div>
-
-
-<!-- Movie Club -->
-<div class="project-card-wide">
-  <div class="project__gallery movieclub">
-    <img src="assets/img/movie_club.png" alt="Movie Club Screenshot">
-  </div>
-  <h3 style="text-align: center;">Movie Club</h3>
-  <p style="text-align: center;">
-    A social movie forum where users can rate and share films they've watched. The app includes an AI-powered recommendation feature
-    that suggests movies based on user preferences, and provides links to IMDb ratings and available streaming platforms.
-  </p>
-  <div class="skills__items" style="justify-content: center; margin-top: 10px;">
-    <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="20" /> TypeScript</div>
-    <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="20" /> HTML</div>
-    <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="20" /> CSS</div>
-  </div>
-  <div style="display: flex; justify-content: center; gap: 16px; margin-top: 20px;">
-    <a href="https://github.com/barkobi40/MovieClub_Prod" target="_blank" class="project-button code">View Code</a>
-  </div>
-</div>
-
-<!-- Portfolio Website  -->
-<div class="project-card-tall">
-  <div class="project__gallery portfolio">
-    <img src="assets/img/bar-profile.png" alt="Portfolio Website Screenshot">
-  </div>
-  <h3 style="text-align: center;">Portfolio Website</h3>
-  <p style="text-align: center;">
-    A modern and responsive personal portfolio website featuring smooth animations and a clean layout to highlight my background, experience, and skills.
-  </p>
-  <div class="skills__items" style="justify-content: center; margin-top: 10px;">
-      <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="20" /> HTML</div>
-      <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="20" /> CSS</div>
-      <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="20" /> JavaScript</div>
-  </div>
-  <div style="display: flex; justify-content: center; gap: 16px; margin-top: 20px;">
-      <a href="https://github.com/barkobi40/MyPortfolioWeb" target="_blank" class="project-button code">View Code</a>
-  </div>
-</div>
-
-</div>
-</section>
-
-<!--===== Involvement =====-->
-<section class="leadership section" id="leadership">
-  <h2 class="section-title">Involvement</h2>
-  <div class="work__container bd-grid" style="justify-content: center;">
-
-    <div class="leadership__item" style="max-width: 600px; margin: 0 auto;">
-      <img class="logo-inline" src="/assets/img/ic_elevation.png" alt="elevation logo" />
-      <div>
-        <h3 style="text-align: center;">Product Management Course</h3>
-        <p style="text-align: center;"><em>Mar - Jun 2024</em></p>
-        <p style="text-align: center;">Completed a Product Management course that covered product discovery, roadmapping, and feature planning. Strengthened my ability to translate user needs into practical product decisions.
-          </p>
-      </div>
-    </div>
-
-    <div class="leadership__item" style="max-width: 600px; margin: 0 auto;">
-      <img class="logo-inline" src="/assets/img/ic_leadersclub.png" alt="Leaders club logo" />
-      <div>
-        <h3 style="text-align: center;">Leaders Club</h3>
-        <p style="text-align: center;"><em>Mar – Jun 2024</em></p>
-        <p style="text-align: center;">Participated in hackathons, workshops, and startup visits as part of the Entrepreneurship Club, gaining exposure to real-world founders. Collaborated with fellow students to pitch ideas and build MVPs.
-          </p>
-      </div>
-    </div>
-
-    <div class="leadership__item" style="max-width: 600px; margin: 0 auto;">
-      <img class="logo-inline" src="/assets/img/ic_developersclub.png" alt="developer club logo" />
-      <div>
-        <h3 style="text-align: center;">Developers Club</h3>
-        <p style="text-align: center;"><em>Nov 2023 – Nov 2024</em></p>
-        <p style="text-align: center;">Participated in tech talks and collaborative projects with the Developers Club at my college, including joint initiatives with the Entrepreneurship Club. Gained hands-on experience in team-based software development.
-          </p>
-      </div>
-    </div>
-
-    <div class="leadership__item" style="max-width: 600px; margin: 0 auto;">
-      <img class="logo-inline" src="/assets/img/ic_queenb.png" alt="QueenB logo" />
-      <div>
-        <h3 style="text-align: center;">QueenB Community</h3>
-        <p style="text-align: center;"><em>2024 – Present</em></p>
-        <p style="text-align: center;">Active member of <strong>QueenB</strong> – a national tech community of over 6,000 women in Computer Science, Engineering, and R&D. The community promotes continuous learning, collaboration, and professional development through partnerships with leading tech companies in Israel.</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-            <!--===== CONTACT =====-->
-            <section class="contact section" id="contact">
-                <h2 class="section-title">Contact Me</h2>
-
-                <div class="contact__container bd-grid">
-                    <div class="contact__info">
-                        <div class="contact__card">
-                            <i class='bx bx-mail-send contact__card-icon'></i>
-                            <h3 class="contact__card-title">Email</h3>
-                            <span class="contact__card-data">Bar.kobi40@gmail.com</span>
-                            <a href="mailto:Bar.kobi40@gmail.com" target="_blank" class="contact__button">
-                                Write me <i class='bx bx-right-arrow-alt contact__button-icon'></i>
-                            </a>
-                        </div>
-                        <div class="contact__card">
-                            <i class='bx bxl-linkedin contact__card-icon'></i>
-                            <h3 class="contact__card-title">LinkedIn</h3>
-                            <span class="contact__card-data">Bar Kobi</span>
-                            <a href="https://www.linkedin.com/in/bar-kobi/" target="_blank" class="contact__button">
-                                Connect <i class='bx bx-right-arrow-alt contact__button-icon'></i>
-                            </a>
-                        </div>
-                    </div>
-                    </div>
-            </section>
-        <!--===== FOOTER =====-->
-        <footer class="footer">
-            <p class="footer__title">Bar Kobi</p>
-            <div class="footer__social">
-                <a href="https://github.com/barkobi40" class="footer__icon" target="_blank"><i class='bx bxl-github'></i></a>
-                <a href="https://www.linkedin.com/in/bar-kobi/" class="footer__icon" target="_blank"><i class='bx bxl-linkedin'></i></a>
+        <div class="journey-item">
+          <div class="journey-content-wrapper">
+            <div class="journey-card">
+              <h3 class="journey-card-title-with-icon">
+                <img src="assets/img/ic_idf.png" alt="IDF Icon" class="journey-title-icon">
+                Medic & Medic Instructor
+              </h3>
+              <p class="journey-date">Military Service | 2017-2019</p>
+              <ul>
+                <li>I served as a certified medical practitioner and subsequently as a medic instructor in the IDF.</li>
+              </ul>
             </div>
-            <p class="footer__copy">&#169; 2025 Bar Kobi. All rights reserved.</p>
-        </footer>
+          </div>
+          <div class="journey-dot hidden md:block"></div>
+        </div>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
-        <script src="assets/js/main.js"></script>
-        <script src="assets/js/darkmode.js"></script>
-    </body>
+        <div class="journey-item">
+          <div class="journey-content-wrapper">
+            <div class="journey-card">
+              <h3 class="journey-card-title-with-icon">
+                <img src="assets/img/ic_high_school.webp" alt="High School Icon" class="journey-title-icon">
+                High School Diploma
+              </h3>
+              <p class="journey-date">Gymnasia Rehavia High School- Jerusalem | 2012-2017</p>
+              <p>Graduated with High Honors. During middle school, participated in the Mofet program — an academic
+                excellence track focused on strengthening scientific subjects, mathematics, and English. </p>
+            </div>
+          </div>
+          <div class="journey-dot hidden md:block"></div>
+        </div>
+
+      </div>
+    </section>
+    <!--===== PROJECTS =====-->
+    <section class="projects section" id="projects">
+      <h2 class="section-title">Projects</h2>
+
+      <div class="projects-grid">
+
+        <!-- RooMatch App -->
+        <div class="project-card-wide">
+          <div class="featured-badge">Featured</div>
+          <div class="project__gallery roomatch"
+            style="height: 220px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+            <img src="assets/img/project-roomatch.png" alt="RooMatch Screenshot 1"
+              style="height: 100%; width: 100%; object-fit: cover;">
+          </div>
+          <h3 style="text-align: center;">RooMatch App</h3>
+          <p style="text-align: center;">
+            RooMatch helps users find the perfect apartment and roommate by matching personal preferences with real
+            listings and profiles. <br>
+            The app uses a smart algorithm that learns from user behavior to improve match quality over time. <br>
+            Built as a final-year project by a team of five, it offers a smooth, personalized experience for both
+            renters and property owners.
+          </p>
+          <br>
+          <div class="skills__items" style="justify-content: center; margin-top: 10px;">
+            <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" width="20" />
+              Kotlin</div>
+            <div><img src="https://avatars.githubusercontent.com/u/80191249?s=200&v=4" width="20" /> Ktor</div>
+            <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                width="20" /> MongoDB</div>
+            <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" width="20" />
+              Jetpack Compose</div>
+            <div><img src="https://cdn-icons-png.flaticon.com/512/9184/9184643.png" width="20" /> JWT</div>
+            <div><img src="https://cdn-icons-png.flaticon.com/512/5810/5810459.png" width="20" /> Flow</div>
+            <div><img src="https://cdn-icons-png.flaticon.com/512/2823/2823092.png" width="20" /> ROOM</div>
+          </div>
+          <br>
+          <br>
+          <div style="display: flex; justify-content: center; gap: 16px; margin-top: 20px;">
+            <a href="https://www.youtube.com/watch?v=kSwQQ943zFM" target="_blank" class="project-button demo">View
+              Demo</a>
+            <a href="https://github.com/barkobi40/RooMatchApp" target="_blank" class="project-button code">View Code</a>
+          </div>
+        </div>
+        <!-- Chargehood App -->
+        <div class="project-card-tall">
+          <div class="project__gallery chargehood"
+            style="height: auto; display: flex; align-items: center; justify-content: center;">
+            <img src="assets/img/charghood.png" alt="Chargehood Screenshot 1"
+              style="width: 90%; height: auto; object-fit: contain; border-radius: 1rem;">
+          </div>
+          <h3 style="text-align: center;">Chargehood App</h3>
+          <p style="text-align: center;">
+            Chargehood is an innovative app that makes finding and managing private charging stations simple and fast.
+          </p>
+          <div class="skills__items" style="justify-content: center; margin-top: 10px;">
+            <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" width="20" />
+              Kotlin</div>
+            <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" width="20" />
+              Firebase</div>
+            <div><img src="https://cdn-icons-png.flaticon.com/512/120/120614.png" width="20" /> XML-layouts</div>
+            <div><img src="https://cdn-icons-png.flaticon.com/512/924/924915.png" width="20" /> MVVM</div>
+            <div><img src="https://cdn-icons-png.flaticon.com/512/2823/2823092.png" width="20" /> ROOM</div>
+            <div><img src="https://cdn-icons-png.flaticon.com/512/2150/2150036.png" width="20" /> LiveData</div>
+          </div>
+          <br>
+          <div style="display: flex; justify-content: center; gap: 16px; margin-top: 20px;">
+            <a href="https://www.youtube.com/watch?v=3nHAvhUWASM" target="_blank" class="project-button demo">View
+              Demo</a>
+            <a href="https://github.com/barkobi40/ChargehoodApp" target="_blank" class="project-button code">View
+              Code</a>
+          </div>
+        </div>
+
+
+        <!-- Movie Club -->
+        <div class="project-card-wide">
+          <div class="project__gallery movieclub">
+            <img src="assets/img/movie_club.png" alt="Movie Club Screenshot">
+          </div>
+          <h3 style="text-align: center;">Movie Club</h3>
+          <p style="text-align: center;">
+            A social movie forum where users can rate and share films they've watched. The app includes an AI-powered
+            recommendation feature
+            that suggests movies based on user preferences, and provides links to IMDb ratings and available streaming
+            platforms.
+          </p>
+          <div class="skills__items" style="justify-content: center; margin-top: 10px;">
+            <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                width="20" /> TypeScript</div>
+            <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="20" />
+              HTML</div>
+            <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="20" /> CSS
+            </div>
+          </div>
+          <div style="display: flex; justify-content: center; gap: 16px; margin-top: 20px;">
+            <a href="https://github.com/barkobi40/MovieClub_Prod" target="_blank" class="project-button code">View
+              Code</a>
+          </div>
+        </div>
+
+        <!-- Portfolio Website  -->
+        <div class="project-card-tall">
+          <div class="project__gallery portfolio">
+            <img src="assets/img/bar-profile.png" alt="Portfolio Website Screenshot">
+          </div>
+          <h3 style="text-align: center;">Portfolio Website</h3>
+          <p style="text-align: center;">
+            A modern and responsive personal portfolio website featuring smooth animations and a clean layout to
+            highlight my background, experience, and skills.
+          </p>
+          <div class="skills__items" style="justify-content: center; margin-top: 10px;">
+            <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="20" />
+              HTML</div>
+            <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="20" /> CSS
+            </div>
+            <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                width="20" /> JavaScript</div>
+          </div>
+          <div style="display: flex; justify-content: center; gap: 16px; margin-top: 20px;">
+            <a href="https://github.com/barkobi40/MyPortfolioWeb" target="_blank" class="project-button code">View
+              Code</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!--===== Involvement =====-->
+    <section class="leadership section" id="leadership">
+      <h2 class="section-title">Involvement</h2>
+      <div class="work__container bd-grid" style="justify-content: center;">
+
+        <div class="leadership__item" style="max-width: 600px; margin: 0 auto;">
+          <img class="logo-inline" src="/assets/img/ic_elevation.png" alt="elevation logo" />
+          <div>
+            <h3 style="text-align: center;">Product Management Course</h3>
+            <p style="text-align: center;"><em>Mar - Jun 2024</em></p>
+            <p style="text-align: center;">Completed a Product Management course that covered product discovery,
+              roadmapping, and feature planning. Strengthened my ability to translate user needs into practical product
+              decisions.
+            </p>
+          </div>
+        </div>
+
+        <div class="leadership__item" style="max-width: 600px; margin: 0 auto;">
+          <img class="logo-inline" src="/assets/img/ic_leadersclub.png" alt="Leaders club logo" />
+          <div>
+            <h3 style="text-align: center;">Leaders Club</h3>
+            <p style="text-align: center;"><em>Mar – Jun 2024</em></p>
+            <p style="text-align: center;">Participated in hackathons, workshops, and startup visits as part of the
+              Entrepreneurship Club, gaining exposure to real-world founders. Collaborated with fellow students to pitch
+              ideas and build MVPs.
+            </p>
+          </div>
+        </div>
+
+        <div class="leadership__item" style="max-width: 600px; margin: 0 auto;">
+          <img class="logo-inline" src="/assets/img/ic_developersclub.png" alt="developer club logo" />
+          <div>
+            <h3 style="text-align: center;">Developers Club</h3>
+            <p style="text-align: center;"><em>Nov 2023 – Nov 2024</em></p>
+            <p style="text-align: center;">Participated in tech talks and collaborative projects with the Developers
+              Club at my college, including joint initiatives with the Entrepreneurship Club. Gained hands-on experience
+              in team-based software development.
+            </p>
+          </div>
+        </div>
+
+        <div class="leadership__item" style="max-width: 600px; margin: 0 auto;">
+          <img class="logo-inline" src="/assets/img/ic_queenb.png" alt="QueenB logo" />
+          <div>
+            <h3 style="text-align: center;">QueenB Community</h3>
+            <p style="text-align: center;"><em>2024 – Present</em></p>
+            <p style="text-align: center;">Active member of <strong>QueenB</strong> – a national tech community of over
+              6,000 women in Computer Science, Engineering, and R&D. The community promotes continuous learning,
+              collaboration, and professional development through partnerships with leading tech companies in Israel.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!--===== CONTACT =====-->
+    <section class="contact section" id="contact">
+      <h2 class="section-title">Contact Me</h2>
+
+      <div class="contact__container bd-grid">
+        <div class="contact__info">
+          <div class="contact__card">
+            <i class='bx bx-mail-send contact__card-icon'></i>
+            <h3 class="contact__card-title">Email</h3>
+            <span class="contact__card-data">Bar.kobi40@gmail.com</span>
+            <a href="mailto:Bar.kobi40@gmail.com" target="_blank" class="contact__button">
+              Write me <i class='bx bx-right-arrow-alt contact__button-icon'></i>
+            </a>
+          </div>
+          <div class="contact__card">
+            <i class='bx bxl-linkedin contact__card-icon'></i>
+            <h3 class="contact__card-title">LinkedIn</h3>
+            <span class="contact__card-data">Bar Kobi</span>
+            <a href="https://www.linkedin.com/in/bar-kobi/" target="_blank" class="contact__button">
+              Connect <i class='bx bx-right-arrow-alt contact__button-icon'></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--===== FOOTER =====-->
+    <footer class="footer">
+      <p class="footer__title">Bar Kobi</p>
+      <div class="footer__social">
+        <a href="https://github.com/barkobi40" class="footer__icon" target="_blank"><i class='bx bxl-github'></i></a>
+        <a href="https://www.linkedin.com/in/bar-kobi/" class="footer__icon" target="_blank"><i
+            class='bx bxl-linkedin'></i></a>
+      </div>
+      <p class="footer__copy">&#169; 2025 Bar Kobi. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/darkmode.js"></script>
+</body>
+
 </html>
